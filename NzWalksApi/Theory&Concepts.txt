@@ -1,0 +1,59 @@
+﻿Dot NET
+.NET is a free, cross-platform, open source developer platform for building many different types of applications.
+With .NET, you can use multiple languages, editors, and libraries to build for web, mobile, desktop, games, IoT, and more.
+
+Q1)
+What is Rest ?
+Ans : Representational State Transfer 
+: 1 - Style of artchitecture for buliding web services 
+: 2 - Set of principles that how web services should be designed and interact 
+with each other .
+: 3 - Resource that can be identified and manipulated through a web service .
+:4 - Resources are accesed through urls .
+:5 - Http verb are used to perform actions on these resourse.
+
+Stateless : that server should not store any client state between thes requests .
+this increases readabilty and scalibility beacuse server can handle multiple request 
+simuntaneously .
+
+
+Q2) Routing in asp.net core :
+
+It is the Process of matching incoming HttpRequests to the appropiate actions methods 
+that will handle those requests .
+Routing is used to map the url of a request to a controller and then its action method.
+
+
+
+Q3) Swagger : 
+Popular tool for documenting api's and providing a user friendly interface for testing 
+and exploring apis.
+
+
+Q4) What is IactionResult Type : 
+IActionResult is an interface that can return multiple types of data.
+For example, you can use IActionResult to return data like NotFound, OK, or Redirect.
+IActionResult is an interface that allows you to create a custom response.
+
+Q5) DbContext Class 
+ans: It is the class that represents a session with a database and provides a set of apis's
+for performing database operations . 
+-Maintaining a connection to Db , Track Changes , Perform crud operations , 
+bridge between domain models and the database 
+
+-Dbcontext class is the primary class that is responsible for interacting with the database 
+and perforimng crud operation in db tables . 
+
+Controller -> DbContext -> Database
+
+Q6) Dbset : it is the property of db context class that represent a collection of entities 
+in the database .
+
+Q7 ) ConnectionString : We can use this connection string through entity framework and talk 
+to a sql server and a database inside the sql server .
+
+Q8) Dependancy Injection : Dependancy injection is a design pattern to increase the 
+maintainbility and testability of applications by reducing the coupling between components.
+
+
+
