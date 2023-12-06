@@ -55,5 +55,22 @@ to a sql server and a database inside the sql server .
 Q8) Dependancy Injection : Dependancy injection is a design pattern to increase the 
 maintainbility and testability of applications by reducing the coupling between components.
 
+DI Defination : insted of instititing objects within a class those objects are passed as parameter to the class
+like passing it to the constructor.
+
+Without DI Uses faults:
+if later on class name is changes or we have to 
+implement a different implementation of myService class, then we have to change all the controllers or classes that usses
+this MyService.
 
 
+With Dependancy Injection:
+Insted of creating the instnces within the class , we can easily inject the interface myservice
+in our application in program.cs 
+AddScoped<IMyInterface , MYserice> and also provides the implementtion details.
+We can easily inject the service as parameter to the controller .and we can use this 
+Service throughout the application . We can esaily chenge the implemenetation as 
+myservice is changes to the myservice2 and we can easily change it in the program.cs file.
+
+
+Q9)
