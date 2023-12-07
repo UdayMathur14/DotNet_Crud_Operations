@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using NzWalksApi.Data;
+using NzWalksApi.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,6 +14,8 @@ builder.Services.AddSwaggerGen();
 //to add the dbcontext and also add the connection string to it 
 builder.Services.AddDbContext<EmployeeDbContext>(options=>
 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddScoped<IRolesInterface, SqlIntactRoles>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

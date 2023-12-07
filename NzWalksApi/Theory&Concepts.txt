@@ -82,3 +82,21 @@ Q9)Dtos = DATA transfer objects
 client ->Dto->Api ->DomainModel->Database.
 Modles are talk to the datatabse and in return we will return the model . so we need to add a layer 
 and do mapping and show the dto to the user .
+
+Q10) Async Programing : The program execution is blocked while waiting for a long running time for operation :
+poor performance and unresponsive user interface .
+
+Asyn prog allows the program to continue executing other tasks while waiting for the long running operation to complete
+By using async and await keyword we can achieve async programming . 
+Long running operation such as database quiries , file opertion .
+
+
+Q11) Repsitory Pattern :Design pattern to seprate the data access layer from the application 
+Provide interface without exposing implementation.
+
+
+CONTROLLER->REPOSITORY->DATABASE
+
+BENEFITS: Decoupling , consistency, performance
+
+
