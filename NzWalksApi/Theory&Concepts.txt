@@ -99,4 +99,7 @@ CONTROLLER->REPOSITORY->DATABASE
 
 BENEFITS: Decoupling , consistency, performance
 
+Q12) Navigation property : are properties that allow us to navigate from one domain model
+to another . that represt a relationship.
+
 

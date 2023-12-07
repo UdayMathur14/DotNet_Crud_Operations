@@ -21,6 +21,10 @@ namespace NzWalksApi.Repository
 
         public async Task<Roles?> GetEmployeesRoles(int id)
         {
+            //related data for this employee
+            // var walks = employeeDbContext.Employee.Include("Departments").Include("Roles").ToListAsync();
+            // var walks = employeeDbContext.Employee.Include("x=>x.EmployeeId").Include("b;Roles").ToListAsync();
+
             var emp = await employeeDbContext.Roles.FindAsync(id);
             return emp;
         }

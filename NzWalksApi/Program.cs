@@ -13,7 +13,7 @@ builder.Services.AddSwaggerGen();
 
 //to add the dbcontext and also add the connection string to it 
 builder.Services.AddDbContext<EmployeeDbContext>(options=>
-options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+options.UseSqlServer(builder.Configuration.GetConnectionString("DatabaseConnection")));
 
 builder.Services.AddScoped<IRolesInterface, SqlIntactRoles>();
 var app = builder.Build();
