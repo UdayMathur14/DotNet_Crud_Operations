@@ -69,8 +69,16 @@ Insted of creating the instnces within the class , we can easily inject the inte
 in our application in program.cs 
 AddScoped<IMyInterface , MYserice> and also provides the implementtion details.
 We can easily inject the service as parameter to the controller .and we can use this 
-Service throughout the application . We can esaily chenge the implemenetation as 
+Service throughout the application . We can esaily change the implemenetation as 
 myservice is changes to the myservice2 and we can easily change it in the program.cs file.
 
 
-Q9)
+Q9)Dtos = DATA transfer objects 
+:Used to transfer data between different layers .
+:Manipulate the properties in dto 
+:Security , performance because models are directly coupled with the database 
+:Reduce the Risk of 
+
+client ->Dto->Api ->DomainModel->Database.
+Modles are talk to the datatabse and in return we will return the model . so we need to add a layer 
+and do mapping and show the dto to the user .
