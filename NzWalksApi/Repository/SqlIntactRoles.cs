@@ -13,10 +13,32 @@ namespace NzWalksApi.Repository
         {
             this.employeeDbContext = employeeDbContext;
         }
-        public async Task<List<Roles>> GetAllRoles()
+        public async Task<List<Roles>> GetAllRoles(string ? column , string? word, string? sortby , int pagenumber , int pagesize)
         {
-            var employee = await employeeDbContext.Roles.ToListAsync();
-            return employee;
+            //filtering
+            var employee =  employeeDbContext.Roles.AsQueryable();
+            if(string.IsNullOrWhiteSpace(column)==false && string.IsNullOrWhiteSpace(word)==null) { 
+                if(column.Equals("RoleName", StringComparison.OrdinalIgnoreCase))
+                {
+                    employee = employee.Where(x => x.RoleName.Contains(word));
+                }
+            }
+
+            //sorting , if you want in acending or decending pass another parameter
+            if (string.IsNullOrWhiteSpace(sortby) == false)
+            {
+                if(sortby.Equals("RoleName" , StringComparison.OrdinalIgnoreCase))
+                {
+                    employee = employee.OrderBy(x => x.RoleName);
+                }
+            }
+
+            //Pagination
+            var SkipResult = (pagenumber-1) * pagesize;
+
+            return await employee.Skip(SkipResult).Take(pagesize).ToListAsync();
+
+            return await employee.ToListAsync();
         }
 
         public async Task<Roles?> GetEmployeesRoles(int id)

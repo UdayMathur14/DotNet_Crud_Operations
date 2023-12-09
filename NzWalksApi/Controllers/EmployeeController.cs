@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using NzWalksApi.Data;
 using NzWalksApi.Models;
+using NzWalksApi.ModelValidation;
 
 namespace NzWalksApi.Controllers;
 
@@ -42,6 +43,7 @@ public class EmployeeController : ControllerBase
     }
     [HttpGet]
     [Route("{id:int}")]
+    [ValidateModel] //use this istead of model.isvalid
     public IActionResult GetEmployeeById([FromRoute] int id)
     {
         //Normal method 

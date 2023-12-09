@@ -102,4 +102,22 @@ BENEFITS: Decoupling , consistency, performance
 Q12) Navigation property : are properties that allow us to navigate from one domain model
 to another . that represt a relationship.
 
+Q13) Model Validation :
+when you want to validate the property or that class which you want to send to the api 
+so then model validation is used.
+ex: min length , maxlength , required and you can achieve this my applying model.isvalid 
+in the if condition . 
+
+And also there is a second mehod to make a folder known as validation and write code on it and 
+apply as a validation in in api while passing .
+Creating the custom validate model attribute.
+
+Q14)Filtering = only a subset of data . 
+We used this on the get method only 
+
+Q15) sorting : sorts the column means order by . 
+
+Q16) Pagination
+
+
 

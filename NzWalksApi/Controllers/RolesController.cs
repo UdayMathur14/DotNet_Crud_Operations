@@ -17,9 +17,9 @@ namespace NzWalksApi.Controllers
         }
 
         [HttpGet]
-        public async Task<List<Roles>> GetAllRoles ()
+        public async Task<List<Roles>> GetAllRoles([FromQuery] string? column , [FromQuery] string? word , string? sortby , int pageNumber = 1 , int pageSize = 1000)
         {
-            return await rolesInterface.GetAllRoles();
+            return await rolesInterface.GetAllRoles(column, word , sortby , pageNumber, pageSize);
         }
 
         [HttpGet]

@@ -9,6 +9,9 @@ namespace NzWalksApi.Models
         public int EmployeeID { get; set; }
 
         [Required]
+        [MinLength(3 , ErrorMessage ="Minimum length should be 3")]
+        [MaxLength(10, ErrorMessage = "maximum length should be 10")]
+
         public string FirstName { get; set; }
 
         [Required]
