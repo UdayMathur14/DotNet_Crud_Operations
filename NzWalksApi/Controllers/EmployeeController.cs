@@ -38,8 +38,8 @@ public class EmployeeController : ControllerBase
                 Salary = 120
             }
         };
-        var employees = employeeDbContext.Employee.ToList();
-        return Ok(employees);
+        //var employees = employeeDbContext.Employee.ToList();
+        return Ok(Employees);
     }
     [HttpGet]
     [Route("{id:int}")]

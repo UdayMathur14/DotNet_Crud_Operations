@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NzWalksApi", "NzWalksApi\NzWalksApi.csproj", "{D621F43D-D12B-4F17-9776-F51604D50A10}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nzWalksUI", "nzWalksUI\nzWalksUI.csproj", "{8D8C92FB-BA8C-49DB-8AA4-AB2CFC823932}"
+	ProjectSection(ProjectDependencies) = postProject
+		{D621F43D-D12B-4F17-9776-F51604D50A10} = {D621F43D-D12B-4F17-9776-F51604D50A10}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
