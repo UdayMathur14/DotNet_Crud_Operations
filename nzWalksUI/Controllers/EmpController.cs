@@ -2,11 +2,11 @@
 
 namespace nzWalksUI.Controllers
 {
-    public class EmployeeController : Controller
+    public class EmpController : Controller
     {
         private readonly IHttpClientFactory httpClientFactory;
 
-        public EmployeeController(IHttpClientFactory httpClientFactory)
+        public EmpController(IHttpClientFactory httpClientFactory)
         {
             this.httpClientFactory = httpClientFactory;
         }
