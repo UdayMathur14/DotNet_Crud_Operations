@@ -2,6 +2,16 @@
 .NET is a free, cross-platform, open source developer platform for building many different types of applications.
 With .NET, you can use multiple languages, editors, and libraries to build for web, mobile, desktop, games, IoT, and more.
 
+Free to Use: You don’t have to pay anything to use it.
+Works Everywhere: It can be used on different types of computers and devices, like Windows PCs, Macs, and Linux machines.
+Many Languages: You can write your code in different programming languages, like C# or F#.
+Build Anything: With .NET, you can create:
+Websites: Pages and services you visit online.
+Mobile Apps: Programs for your phone or tablet.
+Desktop Apps: Software you run on your computer.
+Games: Video games you play.
+Smart Devices: Applications for things like smart fridges or smart lights.
+
 Q1)
 What is Rest ?
 Ans : Representational State Transfer 
@@ -12,7 +22,34 @@ with each other .
 :4 - Resources are accesed through urls .
 :5 - Http verb are used to perform actions on these resourse.
 
-Stateless : that server should not store any client state between thes requests .
+
+REST is like a set of rules that makes it easy for different programs to talk to each other over the web. It helps you get and send information using simple web addresses (URLs) and actions.
+
+Example: Online Store
+Imagine an online store where you can buy items. Here’s how REST would work for this store:
+
+Resources: Things you can get or change.
+
+Items (like a book or a phone)
+Customers
+Orders
+URLs: Web addresses for these things.
+
+To see a list of items: www.onlinestore.com/items
+To see one item (like item with ID 1): www.onlinestore.com/items/1
+To see a list of customers: www.onlinestore.com/customers
+To see one customer (like customer with ID 2): www.onlinestore.com/customers/2
+HTTP Verbs: Actions you can do with these things.
+
+GET: Look at something.
+Example: GET www.onlinestore.com/items/1 (Look at item 1)
+POST: Add something new.
+Example: POST www.onlinestore.com/items (Add a new item)
+PUT: Change something.
+Example: PUT www.onlinestore.com/items/1 (Update item 1)
+DELETE: Remove something.
+Example: DELETE www.onlinestore.com/items/1 (Delete item 1)
+Stateless : that server should not store any client state between these requests .
 this increases readabilty and scalibility beacuse server can handle multiple request 
 simuntaneously .
 
@@ -22,6 +59,31 @@ Q2) Routing in asp.net core :
 It is the Process of matching incoming HttpRequests to the appropiate actions methods 
 that will handle those requests .
 Routing is used to map the url of a request to a controller and then its action method.
+
+Routing in ASP.NET Core is like a traffic director. It takes the web address (URL) someone types in or clicks on and sends it to the right part of your web application to handle it.
+
+Easier Explanation
+Incoming Requests: When someone visits a URL on your website, like www.yoursite.com/products/123, ASP.NET Core needs to know what to do with that URL.
+
+Routing: The routing system looks at the URL and figures out which part of your code should handle the request. It maps the URL to a specific controller and action method in your code.
+
+Controller and Action Method: The controller is like a manager, and the action method is like a specific task the manager performs. The routing system sends the request to the correct manager (controller) and tells it to perform a specific task (action method).
+
+Example
+Imagine you have a website for an online store. Here’s a simple example:
+
+URL: www.onlinestore.com/products/123
+URL Parts:
+www.onlinestore.com: The domain of your website.
+/products: This part tells the routing system that the request is related to products.
+/123: This is the ID of a specific product.
+Routing in Action:
+Incoming Request: Someone visits www.onlinestore.com/products/123.
+Routing System:
+Sees the /products part and knows it should go to the ProductsController.
+Sees the /123 part and knows it needs to pass 123 as a parameter to the method in ProductsController.
+Controller and Action Method:
+The routing system directs the request to the ProductsController.
 
 
 
@@ -35,6 +97,22 @@ IActionResult is an interface that can return multiple types of data.
 For example, you can use IActionResult to return data like NotFound, OK, or Redirect.
 IActionResult is an interface that allows you to create a custom response.
 
+IActionResult is an interface in ASP.NET Core that allows a controller action to return various types of responses to the client. This flexibility helps in creating different types of responses based on the outcome of the action.
+
+Corrected Explanation
+IActionResult Interface:
+
+IActionResult is an interface used by controller action methods to return different kinds of HTTP responses.
+Multiple Response Types:
+
+Using IActionResult, you can return various types of responses such as:
+NotFound(): Returns a 404 Not Found status.
+Ok(): Returns a 200 OK status with or without data.
+Redirect(): Redirects the client to a different URL.
+BadRequest(): Returns a 400 Bad Request status.
+Content(): Returns a custom content response.
+
+
 Q5) DbContext Class 
 ans: It is the class that represents a session with a database and provides a set of apis's
 for performing database operations . 
@@ -46,11 +124,45 @@ and perforimng crud operation in db tables .
 
 Controller -> DbContext -> Database
 
+DbContext Class:
+
+The DbContext class is like a helper that connects your application to the database.
+It manages the database connection and keeps track of the data changes.
+Main Responsibilities:
+
+Connecting to the Database: Maintains a connection to the database.
+Tracking Changes: Keeps track of changes you make to the data so that they can be saved to the database.
+Performing CRUD Operations: Handles creating, reading, updating, and deleting data in the database.
+Mapping Between Code and Database: Acts as a bridge between your C# code (domain models) and the database tables.
+Simplified Workflow:
+
+Controller: Receives a request and decides what needs to be done.
+DbContext: The controller uses DbContext to talk to the database.
+Database: The actual data is stored and managed in the database.
+
 Q6) Dbset : it is the property of db context class that represent a collection of entities 
 in the database .
 
+MyDbContext: This is your database context class that connects to the database.
+Products: This DbSet<Product> represents the "Products" table in your database. Each Product entity corresponds to a row in the "Products" table.
+Customers: This DbSet<Customer> represents the "Customers" table in your database. Each Customer entity corresponds to a row in the "Customers" table.
+Summary
+DbSet: A property in DbContext that represents a specific table in the database.
+Collection of Entities: Each DbSet is like a collection of all the rows (entities) from a specific table.
+Usage: Helps you easily query and manipulate data from the database tables.
+
+Explanation
+OnlineStoreDbContext: This is your database connection in your application.
+Products: DbSet<Product> represents all the products in your store. Each Product object in this set is like a row in the "Products" table in your database.
+Customers: DbSet<Customer> represents all the customers
+
 Q7 ) ConnectionString : We can use this connection string through entity framework and talk 
 to a sql server and a database inside the sql server .
+
+
+Connection String: Instructions your application uses to connect to a SQL Server database.
+Used with Entity Framework: Helps EF know where and how to access your database.
+Contains Key Information: Server address, database name, and authentication details.
 
 Q8) Dependancy Injection : Dependancy injection is a design pattern to increase the 
 maintainbility and testability of applications by reducing the coupling between components.
